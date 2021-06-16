@@ -33,7 +33,7 @@ def home_view(request):
             # FIXME
             pass
     # FIXME
-    return render(request, 'login/login_form.html')
+    return render(request, 'bases/base_client.html')
 
 
 def logged_out(args):
