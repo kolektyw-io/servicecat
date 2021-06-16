@@ -625,13 +625,13 @@
     </style>
 </head>
 <body class="m4-cloak" style="padding-top: 52px">
-
+{% block header %}
 <header data-role="appbar" data-expand-point="md">
     <a href="index.html" class="d-block brand no-hover"><span class="text-bold">ServiceCat</span>&nbsp;|&nbsp;<span>Help Center</span></a>
     <ul class="app-bar-menu ml-auto text-upper">
-        <li><a href="#"><span class="mif-help"></span> Help Articles</a></li>
-        <li><a href="#"><span class="mif-users"></span> Agent Panel</a></li>
-        <li><a href="#"><span class="text-bold">Log In</span></a></li>
+        <li><a href="#"><span class="mif-help"></span>{% trans  "Help Articles" %}</a></li>
+        <li><a href="#"><span class="mif-users"></span>{% trans "Agent Panel" %} Agent Panel</a></li>
+        <li><a href="#"><span class="text-bold">{% trans "Log In" %}</span></a></li>
     </ul>
 </header>
 
@@ -645,7 +645,6 @@
         </div>
     </div>
 </div>
-
 <div class="container-fluid bg-white">
     <div class="container pt-10 pb-10">
         <h5 class="text-center">Help Topics</h5>
@@ -711,7 +710,8 @@
         </div>
     </div>
 </div>
-
+{% endblock %}
+{% block recommended_articles %}
 <div class="container-fluid">
     <div class="container">
         <h5 class="text-center mt-20">Recommended Articles</h5>
@@ -743,7 +743,8 @@
         </div>
     </div>
 </div>
-
+{% endblock %}
+{% block footer %}
 <footer class="container-fluid bg-footer fg-white p-4">
     <div class="container text-center">
         <ul class="inline-list reduce-1 m-0">
@@ -754,7 +755,7 @@
         </ul>
     </div>
 </footer>
-
+{% endblock %}
 <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
 </body>
