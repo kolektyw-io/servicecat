@@ -1,0 +1,63 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css"
+          rel="stylesheet">
+
+    <title>{% trans "NinjaCat - login panel" %}</title>
+
+    <style>
+        .login-form {
+            width: 500px;
+            height: auto;
+            top: 30%;
+            margin-top: -160px;
+        }
+    </style>
+</head>
+<body class="h-vh-100 bg-brandColor2">
+
+<form class="login-form bg-white p-6 mx-auto border bd-default win-shadow"
+      data-role="validator"
+      action="#"
+      method="post"
+>
+    {% csrf_token %}
+    <h1>NinjaCat</h1>
+
+
+    <span class="mif-vpn-lock mif-4x place-right"
+          style="margin-top: -10px;"></span>
+    <h2 class="text-light">{% trans "Login to service" %}</h2>
+    <hr class="thin mt-4 mb-4 bg-white">
+    <div class="form-group">
+        <input name="email" type="text" data-role="input"
+               data-prepend="<span class='mif-envelop'>"
+               placeholder="{% trans "Enter your email..." %}"
+               data-validate="required email">
+    </div>
+    <div class="form-group">
+        <input name="password" type="password" data-role="input"
+               data-prepend="<span class='mif-key'>"
+               placeholder="{% trans "Enter your password..." %}"
+               data-validate="required">
+    </div>
+
+    <div class="form-group mt-10">
+        <!--<input type="checkbox" data-role="checkbox"
+               data-caption="{% trans "Remember me" %}" class="place-right">-->
+        <button class="button">{% trans "Submit" %}</button>
+    </div>
+</form>
+
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<script>
+    Metro.infobox.create("<p>{% trans "invalid username or password" %}</p>", "alert");
+</script>
+
+</body>
+</html>
