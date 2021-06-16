@@ -5,4 +5,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def agent_home_view(request):
-    return HttpResponse('agent home view')
+    return render(request, 'bases/base_agent.html')

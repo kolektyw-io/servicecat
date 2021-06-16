@@ -19,6 +19,7 @@ import administration
 import agent.urls
 import home.urls
 import setup.urls
+import rest.urls
 import users.urls
 
 urlpatterns = [
@@ -27,5 +28,7 @@ urlpatterns = [
     path('agent/', include(agent.urls)),
     path('setup/', include(setup.urls)),
     path('user/', include(users.urls)),
+    path('rest/', include(rest.urls)),
+    #path('interconnect/', include(users.urls)),
     path('', include(home.urls))
 ]

@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  api:
+    image: kolektywio/servicecat
+    command: "./run.sh"
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - type: volume
+        source: media
+        target: /servicecat/media
+      - type: volume
+        source: static
+        target: /servicecat/static
+  db:
+    image: postgres
+
+volumes:
+  media:
+  static:

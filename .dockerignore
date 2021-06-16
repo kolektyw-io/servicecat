@@ -1,0 +1,4 @@
+venv/
+api/db.sqlite3
+api/static
+api/media
