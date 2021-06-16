@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.urls import path
 
 from commons.models import SystemProperty
+from setup.views import setup_superuser
 
 
 def setup_welcome(request):
@@ -21,5 +22,6 @@ def setup_migrate(request):
 
 urlpatterns = [
     path('setup/', setup_welcome, name='setup_start'),
-    path('upgrade/', setup_migrate, name='setup_upgrade')
+    path('upgrade/', setup_migrate, name='setup_upgrade'),
+    path('setupSuperuser.do/', setup_superuser, name='setup_superuser')
 ]
