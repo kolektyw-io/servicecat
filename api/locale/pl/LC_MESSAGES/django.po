@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 17:41+0000\n"
+"POT-Creation-Date: 2021-06-16 08:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,51 +22,70 @@ msgstr ""
 
 #: api/settings.py:118
 msgid "English (International)"
-msgstr ""
+msgstr "Angielski (międzynarodowy)"
 
 #: api/settings.py:119
 msgid "English (American)"
-msgstr ""
+msgstr "Angielski (amerykański)"
 
 #: api/settings.py:120
 msgid "English (British)"
-msgstr ""
+msgstr "Angielski (brytyjski)"
 
 #: api/settings.py:121
 msgid "German"
-msgstr ""
+msgstr "Niemiecki"
 
 #: api/settings.py:122
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
 
-#: templates/client/main.html:13
+#: templates/bases/base_client.html:641
+msgid "How can we help?"
+msgstr "Jak możemy pomóc?"
+
+#: templates/client/main.html:9
 msgid "WelcomeHeading"
-msgstr ""
+msgstr "Witamy"
 
-#: templates/client/main.html:14
+#: templates/client/main.html:10
 msgid "WelcomeMessage"
-msgstr ""
+msgstr "Witamy!"
 
-#: templates/login/login_form.html:51
+#: templates/login/login_form.html:9 templates/login/login_form_invalid.html:11
+msgid "ServiceCat - login panel"
+msgstr "ServiceCat - panel logowania"
+
+#: templates/login/login_form.html:30
+#: templates/login/login_form_invalid.html:35
 msgid "Login to service"
 msgstr "Logowanie do usługi"
 
-#: templates/login/login_form.html:54
+#: templates/login/login_form.html:33
+#: templates/login/login_form_invalid.html:40
 msgid "Enter your email..."
 msgstr "E-mail"
 
-#: templates/login/login_form.html:57
+#: templates/login/login_form.html:36
+#: templates/login/login_form_invalid.html:46
 msgid "Enter your password..."
 msgstr "Hasło"
 
-#: templates/login/login_form.html:60
+#: templates/login/login_form.html:39
+#: templates/login/login_form_invalid.html:52
 msgid "Remember me"
 msgstr "Zapamiętaj dane logowania"
 
-#: templates/login/login_form.html:61
+#: templates/login/login_form.html:40
+#: templates/login/login_form_invalid.html:53
 msgid "Submit"
 msgstr "Wyślij"
+
+#: templates/login/login_form_invalid.html:59
+#, fuzzy
+#| msgid "Enter your password..."
+msgid "invalid username or password"
+msgstr "Nieprawidłowa nazwa użytkownika lub hasło"
 
 #~ msgid "Hello, world!"
 #~ msgstr "Witaj świecie po polsku!"
