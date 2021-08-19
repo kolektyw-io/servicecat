@@ -631,8 +631,8 @@
         <a href="index.html" class="d-block brand no-hover"><span class="text-bold">ServiceCat</span>&nbsp;|&nbsp;<span>Help Center</span></a>
         <ul class="app-bar-menu ml-auto text-upper">
             <li><a href="#"><span class="mif-help"></span>{% trans "Help Articles" %}</a></li>
-            <li><a href="#"><span class="mif-users"></span>{% trans "Agent Panel" %} </a></li>
-            <li><a href="#"><span class="text-bold">{% trans "Log In" %}</span></a></li>
+            <li><a href="{% url "agent_home_view" %}"><span class="mif-users"></span>{% trans "Agent Panel" %} </a></li>
+            <li><a href=""><span class="text-bold">{% trans "Log In" %}</span></a></li>
         </ul>
     </header>
 

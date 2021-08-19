@@ -1,3 +1,14 @@
 from django.db import models
 
-# Create your models here.
+
+class PortalGroup(models.Model):
+    pass
+
+
+class Form(models.Model):
+    pass
+
+
+class FormField(models.Model):
+    pass
+
