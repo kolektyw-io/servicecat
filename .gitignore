@@ -132,3 +132,5 @@ dmypy.json
 
 api/static
 api/media
+
+*.sqlite3
