@@ -16,7 +16,7 @@ def login_view(request):
         password = request.POST['password']
         try:
             u = User.objects.get(email=username)
-        except User.DoesNotExist:
+        except User.objects.DoesNotExist:
             return render(request, 'login/login_form_invalid.html')
         user = authenticate(request, username=u.username, password=password)
         if user is not None:
@@ -38,7 +38,7 @@ def profile(request):
     pass
 
 
-def register_view(args):
+def register_view(request):
     #FIXME: create register view
     # register view contains functions required to register - or allowance
     # to register
@@ -50,7 +50,7 @@ def register_view(args):
 
     if user_can_register.value == "TRUE":
         #FIXME logika rejestracji
-        pass
+        return render(request, "login/register.html")
     elif user_can_register.value == "INVITE_ONLY":
         #FIXME logika zaproszenia
         pass

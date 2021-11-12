@@ -632,7 +632,7 @@
         <ul class="app-bar-menu ml-auto text-upper">
             <li><a href="#"><span class="mif-help"></span>{% trans "Help Articles" %}</a></li>
             <li><a href="{% url "agent_home_view" %}"><span class="mif-users"></span>{% trans "Agent Panel" %} </a></li>
-            <li><a href=""><span class="text-bold">{% trans "Log In" %}</span></a></li>
+            <li><a href="{% url 'login_view' %}"><span class="text-bold">{% trans "Log In" %}</span></a></li>
         </ul>
     </header>
 
