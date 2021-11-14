@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from django.views.generic import TemplateView
+from django.views.generic import View, TemplateView
 
 
 class CommonView(TemplateView):
@@ -11,6 +11,7 @@ class CommonView(TemplateView):
         self.context['user_first_name'] = self.request.user.first_name
         self.context['user_last_name'] = self.request.user.last_name
         self.context['user'] = self.request.user
+
 
 
 class AgentView(CommonView):
@@ -35,7 +36,7 @@ class ClientView(CommonView):
 
 
 class AdministratorView(CommonView):
-    template_name = ""
+    template_name = "bases/base_admin.html"
 
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
