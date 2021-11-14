@@ -627,7 +627,7 @@
                 </button>
                 <h2 class="text-light m-0 fg-white pl-7"
                     style="line-height: 52px">
-                    Pandora</h2>
+                    ServiceCat 2021</h2>
             </div>
 
             <div class="suggest-box">
@@ -636,7 +636,7 @@
                     <div class="ml-4 avatar-title flex-column">
                         <a href="#"
                            class="d-block fg-white text-medium no-decor"><span
-                                class="reduce-1">Jack Sparrow</span></a>
+                                class="reduce-1">{{ user_first_name }} {{ user_last_name }} ({{ username }})</span></a>
                         <p class="m-0"><span
                                 class="fg-green mr-2">&#x25cf;</span><span
                                 class="text-small">online</span></p>
@@ -1059,15 +1059,15 @@
                     <div class="app-bar-container">
                         <a href="#" class="app-bar-item">
                             <img src="images/jek_vorobey.jpg" class="avatar">
-                            <span class="ml-2 app-bar-name">Jack Sparrow</span>
+                            <span class="ml-2 app-bar-name">{{ user_first_name }} {{ user_last_name }}</span>
                         </a>
                         <div class="user-block shadow-1" data-role="collapse"
                              data-collapsed="true">
                             <div class="bg-darkCyan fg-white p-2 text-center">
                                 <img src="images/jek_vorobey.jpg"
                                      class="avatar">
-                                <div class="h4 mb-0">Jack Sparrow</div>
-                                <div>Pirate captain</div>
+                                <div class="h4 mb-0">{{ user_first_name }} {{ user_last_name }}</div>
+                                <div>({{ username }})</div>
                             </div>
                             <div class="bg-white d-flex flex-justify-between flex-equal-items p-2">
                                 <button class="button flat-button">Followers
