@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en" class=" scrollbar-type-1 sb-red">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Metro 4 -->
+
+    <link href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #ECF0F5;
+        }
+
+        .navview .navview-pane {
+            background-color: #222D32;
+            color: #b8c7ce;
+            font-size: 14px;
+        }
+
+        .navview .navview-content {
+            padding-top: 52px;
+            background-color: #ECF0F5;
+        }
+
+        .navview .pull-button {
+            height: 52px;
+            width: 52px;
+        }
+
+        .navview .navview-menu {
+            background-color: #222D32;
+        }
+
+        .navview .navview-menu li a:hover {
+            color: #fff;
+            background: #1e282c;
+        }
+
+        .navview .navview-menu li.active a {
+            color: #fff;
+            background: #1e282c;
+        }
+
+        .navview .navview-menu .dropdown-toggle::after {
+            border-bottom-color: white !important;
+        }
+
+        .navview .navview-menu .item-header {
+            color: #6f4b4b;
+            background: #1a2226;
+            font-size: 12px;
+        }
+
+        .navview .suggest-box .holder:hover {
+            color: #fff;
+            background: #1e282c;
+        }
+
+        .navview .suggest-box .data-box {
+            display: flex;
+            padding: 0 8px;
+        }
+
+        .navview .suggest-box img.holder {
+            width: 32px !important;
+            height: auto !important;
+        }
+
+        .navview .navview-menu .navview-menu {
+            background-color: #1a2226;
+        }
+
+        .avatar-title {
+            line-height: 1.2;
+        }
+
+        .navview .pull-button + h2,
+        .navview.compacted .pull-button + h2 {
+            display: none;
+        }
+
+        .navview.expand .pull-button + h2,
+        .navview-pane.open .pull-button + h2 {
+            display: flex;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .navview .pull-button + h2 {
+                display: flex;
+            }
+        }
+
+        .navview-pane .avatar,
+        .app-bar .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .navview-pane ::-webkit-scrollbar-track {
+            background-color: #6f4b4b !important;
+        }
+
+        .navview-pane * {
+            scrollbar-color: #e21b1b #6f4b4b !important;
+        }
+
+        .app-bar-name {
+            display: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            .app-bar-name {
+                display: inline;
+            }
+        }
+
+        .dashboard-section-title {
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .user-list {
+            margin: 0;
+            padding: 0;
+            list-style: none inside;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-list li {
+            width: 25%;
+            text-align: center;
+            flex-shrink: 0;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .user-list li .avatar {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .lock-box .avatar {
+            width: 128px;
+            height: auto;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .page-error-box {
+            width: 100%;
+            display: block;
+            position: relative;
+            text-align: center;
+        }
+
+        .login-box {
+            display: block;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-block {
+            display: block;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 280px;
+            line-height: 1.2;
+        }
+
+        .user-block .avatar {
+            width: 128px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .user-block .avatar img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (min-width: 640px) {
+            .login-box {
+                width: 360px;
+            }
+
+            .page-error-box {
+                width: 480px;
+            }
+        }
+
+        .product-list {
+            margin: 10px 0 0;
+            padding: 24px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            background-color: white;
+            position: relative;
+        }
+
+        .product-list .product-list-item {
+            position: relative;
+            display: flex;
+            flex-flow: column;
+            flex-grow: 1;
+            flex-shrink: 0;
+            max-width: calc(100% - 16px);
+            margin: 20px 8px;
+        }
+
+        .product-list .product-list-item .product-image,
+        .product-list .product-list-item .product-title,
+        .product-list .product-list-item .product-price,
+        .product-list .product-list-item .product-desc {
+            display: block;
+            position: relative;
+        }
+
+        .product-list .product-list-item .product-image {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            order: 1;
+        }
+
+        .product-list .product-list-item .product-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-list .product-list-item .product-image:hover img {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .product-list .product-list-item .product-title {
+            order: 2;
+            font-size: 16px;
+            margin: 8px 0 4px;
+        }
+
+        .product-list .product-list-item .product-price {
+            order: 3;
+            margin: 4px 0 8px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .product-list .product-list-item .product-price .old-price {
+            text-decoration: line-through;
+            font-weight: 300;
+            font-size: 14px;
+        }
+
+        .product-list .product-list-item .product-desc {
+            display: none;
+            order: 4;
+        }
+
+        .product-list .product-list-item .product-actions {
+            margin-top: auto;
+            order: 5;
+        }
+
+        .product-list .product-list-item .sales,
+        .product-list .product-list-item .discount {
+            display: none;
+        }
+
+        .product-list .product-list-item .countdown {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding-bottom: 10px;
+        }
+
+        @media screen and (min-width: 576px) {
+            .product-list:not(.view-as-list) .product-list-item {
+                max-width: calc(50% - 16px);
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .product-list:not(.view-as-list) .product-list-item {
+                max-width: calc(33.3% - 16px);
+            }
+        }
+
+        @media screen and (min-width: 1452px) {
+            .product-list:not(.view-as-list) .product-list-item {
+                max-width: calc(25% - 16px);
+            }
+        }
+
+        .product-list.view-as-list .product-list-item {
+            display: block;
+            height: 240px;
+        }
+
+        .product-list.view-as-list .product-image {
+            float: left;
+            width: 200px;
+        }
+
+        .product-list.view-as-list .product-title,
+        .product-list.view-as-list .product-price,
+        .product-list.view-as-list .product-desc,
+        .product-list.view-as-list .product-actions {
+            margin-left: 216px;
+        }
+
+        .product-list.view-as-list .product-price {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .product-list.view-as-list .product-desc {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .product-list.view-as-list .product-actions {
+            border-top: 1px solid #ebebeb;
+            padding-top: 16px;
+        }
+
+        .product-card {
+            display: block;
+            position: relative;
+            background-color: white;
+            padding: 0;
+            margin: 0;
+        }
+
+        .product-card .product-image {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .product-card .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card .product-title {
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .product-card .product-price {
+            margin: 12px 0;
+        }
+
+        .product-card .product-price .old-price {
+            text-decoration: line-through;
+            font-weight: 300;
+            font-size: 14px;
+        }
+
+        .product-card .product-price .current-price {
+            font-weight: 600;
+            font-size: 32px;
+        }
+
+        .product-card .product-price .old-price + .current-price {
+            color: red;
+        }
+
+        .product-card .product-option {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin: 4px 0;
+        }
+
+        .product-card .product-option > span {
+            width: 80px;
+        }
+
+        .product-card .product-option > * {
+            margin: 4px 8px;
+        }
+
+        .product-card .color-group button.active::before {
+            content: "x";
+            color: white;
+        }
+
+        .product-card .size-group button.active {
+            background-color: transparent;
+            border: 1px solid red;
+            color: #000;
+        }
+
+        .product-card .product-actions {
+            margin: 24px 0 0;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        .product-card .product-actions .spinner {
+            width: 200px;
+            margin-right: 8px;
+        }
+
+        .product-card .thumb-list {
+            padding: 0;
+            margin: 8px 0;
+            list-style: none inside;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .product-card .thumb-list li {
+            display: block;
+            width: calc(25% - 2px);
+            height: auto;
+            overflow: hidden;
+            margin: 1px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .product-card .thumb-list li img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card .thumb-list li.active {
+            border-color: red;
+        }
+
+        .product-info {
+            background-color: white;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .review-list {
+            margin: 0;
+            padding: 0;
+            list-style: none inside;
+            display: block;
+            position: relative;
+        }
+
+        .review-list > li {
+            display: block;
+            font-size: 14px;
+            padding: 24px;
+            margin: 4px 0;
+        }
+
+        .review-list > li + li {
+            border-top: 1px solid #f8f8f8;
+        }
+
+        .review-tabloid {
+            width: 120px;
+            height: 155px;
+            overflow: hidden;
+            float: left;
+            margin: 4px;
+        }
+
+        .review-tabloid img {
+            width: 100%;
+            height: auto;
+        }
+
+        .inbox {
+            display: block;
+            position: relative;
+            background-color: white;
+        }
+
+        .inbox-folders .badge {
+            position: absolute;
+            top: 12px;
+            right: 8px;
+        }
+
+        .inbox-folders li.active {
+            border-left-color: #0b98da;
+        }
+
+        .inbox-folders li:hover {
+            background-color: #f7f7f7;
+        }
+
+        .inbox-folders li a {
+            background-color: inherit !important;
+            color: #000 !important;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .inbox-table .check-cell,
+        .inbox-table .star-cell,
+        .inbox-table .attach-cell {
+            width: 32px;
+        }
+
+        .inbox-table .sender-cell {
+            width: 120px;
+        }
+
+        .inbox-table .subject-cell {
+            max-width: 0;
+        }
+
+        .inbox-table .time-cell {
+            width: 100px;
+        }
+
+        .email-read-form .email-date,
+        .email-read-form .email-from,
+        .email-read-form .email-text {
+            font-size: 14px;
+        }
+
+        .email-read-form .email-to {
+            font-size: 12px;
+        }
+
+        .email-attachments {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .email-attachment {
+            width: 180px;
+            height: 170px;
+            display: flex;
+            flex-flow: column;
+            border: 1px solid #ededed;
+            margin: 4px;
+        }
+
+        .email-attachment .preview {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .email-attachment .preview img {
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+        }
+
+        .email-attachment .preview span {
+            font-size: 64px;
+        }
+
+        .email-attachment .desc {
+            height: 50px;
+            margin-top: auto;
+            background-color: #ededed;
+            font-size: 14px;
+            padding: 8px;
+            line-height: 1.2;
+        }
+
+        .email-attachment .desc > *:not(button) {
+            margin-right: 36px;
+        }
+
+        .master {
+            width: 320px;
+            margin: 0 auto;
+            padding: 5px 5px 0;
+            color: #000;
+        }
+
+        @media all and (min-width: 640px) {
+            .master {
+                width: 500px;
+                padding: 5px 10px 0;
+            }
+        }
+
+        @media all and (min-width: 768px) {
+            .master {
+                width: 650px;
+                padding: 5px 80px 0;
+            }
+        }
+
+        /*# sourceMappingURL=index.css.map */
+    </style>
+
+</head>
+<body class="m4-cloak h-vh-100">
+<div data-role="navview" data-toggle="#paneToggle" data-expand="xl"
+     data-compact="lg" data-active-state="true">
+    {% block navview %}
+        <div class="navview-pane">
+            <div class="bg-red d-flex flex-align-center">
+                <button class="pull-button m-0 bg-darkRed-hover">
+                    <span class="mif-menu fg-white"></span>
+                </button>
+                <h2 class="text-light m-0 fg-white pl-7"
+                    style="line-height: 52px">
+                    ServiceCat</h2>
+            </div>
+
+            <div class="suggest-box">
+                <div class="data-box">
+                    <img src="images/jek_vorobey.jpg" class="avatar">
+                    <div class="ml-4 avatar-title flex-column">
+                        <a href="#"
+                           class="d-block fg-white text-medium no-decor"><span
+                                class="reduce-1">{{ user_first_name }} {{ user_last_name }} ({{ username }})</span></a>
+                        <p class="m-0"><span
+                                class="fg-green mr-2">&#x25cf;</span><span
+                                class="text-small">online</span></p>
+                    </div>
+                </div>
+                <img src="images/jek_vorobey.jpg" class="avatar holder ml-2">
+            </div>
+
+            <div class="suggest-box">
+                <input type="text" data-role="input" data-clear-button="false"
+                       data-search-button="true">
+                <button class="holder">
+                    <span class="mif-search fg-white"></span>
+                </button>
+            </div>
+
+            <ul class="navview-menu mt-4" id="side-menu">
+                <li class="item-header">MAIN NAVIGATION</li>
+                <li>
+                    <a href="#dashboard">
+                        <span class="icon"><span
+                                class="mif-meter"></span></span>
+                        <span class="caption">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#widgets">
+                        <span class="icon"><span
+                                class="mif-widgets"></span></span>
+                        <span class="caption">Widgets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span
+                                class="mif-versions"></span></span>
+                        <span class="caption">Sample Pages</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Pages</li>
+                        <li><a href="login.html">
+                            <span class="icon"><span
+                                    class="mif-lock"></span></span>
+                            <span class="caption">Login</span>
+                        </a></li>
+                        <li><a href="register.html">
+                        <span class="icon"><span
+                                class="mif-user-plus"></span></span>
+                            <span class="caption">Register</span>
+                        </a></li>
+                        <li><a href="lockscreen.html">
+                            <span class="icon"><span
+                                    class="mif-key"></span></span>
+                            <span class="caption">Lock screen</span>
+                        </a></li>
+                        <li><a href="#profile">
+                        <span class="icon"><span
+                                class="mif-profile"></span></span>
+                            <span class="caption">Profile</span>
+                        </a></li>
+                        <li><a href="preloader.html">
+                        <span class="icon"><span
+                                class="mif-spinner"></span></span>
+                            <span class="caption">Preloader</span>
+                        </a></li>
+                        <li><a href="404.html">
+                        <span class="icon"><span
+                                class="mif-cancel"></span></span>
+                            <span class="caption">404 Page</span>
+                        </a></li>
+                        <li><a href="500.html">
+                        <span class="icon"><span
+                                class="mif-warning"></span></span>
+                            <span class="caption">500 Page</span>
+                        </a></li>
+                        <li><a href="#product-list">
+                        <span class="icon"><span
+                                class="mif-featured-play-list"></span></span>
+                            <span class="caption">Product list</span>
+                        </a></li>
+                        <li><a href="#product">
+                        <span class="icon"><span
+                                class="mif-rocket"></span></span>
+                            <span class="caption">Product page</span>
+                        </a></li>
+                        <li><a href="#invoice">
+                        <span class="icon"><span
+                                class="mif-open-book"></span></span>
+                            <span class="caption">Invoice</span>
+                        </a></li>
+                        <li><a href="#orders">
+                        <span class="icon"><span
+                                class="mif-table"></span></span>
+                            <span class="caption">Orders</span>
+                        </a></li>
+                        <li><a href="#order-details">
+                        <span class="icon"><span
+                                class="mif-library"></span></span>
+                            <span class="caption">Order details</span>
+                        </a></li>
+                        <li><a href="#price-table">
+                        <span class="icon"><span
+                                class="mif-table"></span></span>
+                            <span class="caption">Price table</span>
+                        </a></li>
+                        <li><a href="maintenance.html">
+                            <span class="icon"><span
+                                    class="mif-cogs"></span></span>
+                            <span class="caption">Maintenance</span>
+                        </a></li>
+                        <li><a href="coming-soon.html">
+                        <span class="icon"><span
+                                class="mif-watch"></span></span>
+                            <span class="caption">Coming soon</span>
+                        </a></li>
+                        <li>
+                            <a href="help-center.html">
+                            <span class="icon"><span
+                                    class="mif-help"></span></span>
+                                <span class="caption">Help center</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span
+                                class="mif-devices"></span></span>
+                        <span class="caption">Forms</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Forms</li>
+                        <li><a href="#forms-basic">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Basic elements</span>
+                        </a></li>
+                        <li><a href="#forms-extended">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Extended elements</span>
+                        </a></li>
+                        <li><a href="#forms-layouts">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Layouts</span>
+                        </a></li>
+                        <li><a href="#forms-validating">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Validating</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span
+                                class="mif-table"></span></span>
+                        <span class="caption">Tables</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Tables</li>
+                        <li><a href="#table-classes">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Table classes</span>
+                        </a></li>
+                        <li><a href="#table-component">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Table component</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span class="mif-air"></span></span>
+                        <span class="caption">UI Elements</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">UI Elements</li>
+                        <li>
+                            <a href="#colors">
+                            <span class="icon"><span
+                                    class="mif-paint"></span></span>
+                                <span class="caption">Colors</span>
+                            </a>
+                        </li>
+                        <li><a href="#typography">
+                            <span class="icon"><span
+                                    class="mif-bold"></span></span>
+                            <span class="caption">Typography</span>
+                        </a></li>
+                        <li><a href="#buttons">
+                            <span class="icon"><span
+                                    class="mif-apps"></span></span>
+                            <span class="caption">Buttons</span>
+                        </a></li>
+                        <li><a href="#tabs">
+                        <span class="icon"><span
+                                class="mif-open-book"></span></span>
+                            <span class="caption">Accordion &amp; Tabs</span>
+                        </a></li>
+                        <li><a href="#tiles">
+                        <span class="icon"><span
+                                class="mif-dashboard"></span></span>
+                            <span class="caption">Tiles</span>
+                        </a></li>
+                        <li><a href="#treeview">
+                            <span class="icon"><span
+                                    class="mif-tree"></span></span>
+                            <span class="caption">TreeView</span>
+                        </a></li>
+                        <li><a href="#listview">
+                            <span class="icon"><span
+                                    class="mif-list"></span></span>
+                            <span class="caption">ListView</span>
+                        </a></li>
+                        <li><a href="#progress">
+                        <span class="icon"><span
+                                class="mif-spinner5"></span></span>
+                            <span class="caption">Progress & activities</span>
+                        </a></li>
+                        <li><a href="#list">
+                        <span class="icon"><span
+                                class="mif-list2"></span></span>
+                            <span class="caption">List component</span>
+                        </a></li>
+                        <li><a href="#splitter">
+                        <span class="icon"><span
+                                class="mif-table"></span></span>
+                            <span class="caption">Splitter</span>
+                        </a></li>
+                        <li><a href="#calendar">
+                        <span class="icon"><span
+                                class="mif-calendar"></span></span>
+                            <span class="caption">Calendar</span>
+                        </a></li>
+                        <li><a href="#countdown">
+                        <span class="icon"><span
+                                class="mif-watch"></span></span>
+                            <span class="caption">Countdown</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span class="mif-play"></span></span>
+                        <span class="caption">Media</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Media</li>
+                        <li><a href="#video">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Video player</span>
+                        </a></li>
+                        <li><a href="#audio">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Audio</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span
+                                class="mif-comment"></span></span>
+                        <span class="caption">Information</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Information</li>
+                        <li><a href="#windows">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Windows</span>
+                        </a></li>
+                        <li><a href="#dialogs">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Dialogs</span>
+                        </a></li>
+                        <li><a href="#info-boxes">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">InfoBox</span>
+                        </a></li>
+                        <li><a href="#hints">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Hints</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="icon"><span
+                                class="mif-envelop"></span></span>
+                        <span class="caption">Mailbox</span>
+                        <span class="badges ml-auto mr-3">
+                        <span class="badge inline bg-red fg-white">17</span>
+                        <span class="badge inline bg-red fg-white">7</span>
+                        <span class="badge inline bg-green fg-white">4</span>
+                        <span class="badge inline bg-orange fg-white">3</span>
+                    </span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Mailbox</li>
+                        <li>
+                            <a href="#inbox">
+                            <span class="icon"><span
+                                    class="mif-mail"></span></span>
+                                <span class="caption">Inbox</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#inbox2">
+                            <span class="icon"><span
+                                    class="mif-mail"></span></span>
+                                <span class="caption">Inbox2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#compose">
+                            <span class="icon"><span
+                                    class="mif-mail-read"></span></span>
+                                <span class="caption">Compose</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#read-email">
+                            <span class="icon"><span
+                                    class="mif-mail-read"></span></span>
+                                <span class="caption">Read email</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#chat">
+                        <span class="icon"><span
+                                class="mif-bubbles"></span></span>
+                        <span class="caption">Chat</span>
+                        <span class="badges ml-auto mr-3">
+                        <span class="badge inline bg-red fg-white">7</span>
+                        <span class="badge inline bg-green fg-white">4</span>
+                        <span class="badge inline bg-orange fg-white">3</span>
+                    </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                    <span class="icon"><span
+                            class="mif-magic-wand"></span></span>
+                        <span class="caption">Wizards</span>
+                    </a>
+                    <ul class="navview-menu stay-open" data-role="dropdown">
+                        <li class="item-header">Wizards</li>
+                        <li><a href="#master">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Master</span>
+                        </a></li>
+                        <li><a href="#wizard">
+                        <span class="icon"><span
+                                class="mif-spinner2"></span></span>
+                            <span class="caption">Wizard</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li class="item-header">Documentation</li>
+                <li>
+                    <a href="https://metroui.org.ua/intro.html">
+                    <span class="icon"><span
+                            class="mif-brightness-auto fg-red"></span></span>
+                        <span class="caption">Metro 4</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse"
+                 style="position: absolute; bottom: 0">
+                <div>&copy; 2019 <a href="mailto:sergey@pimenov.com.ua"
+                                    class="text-muted fg-white-hover no-decor">Sergey
+                    Pimenov</a></div>
+                <div>Created with <a href="https://metroui.org.ua"
+                                     class="text-muted fg-white-hover no-decor">Metro
+                    4</a></div>
+            </div>
+        </div>
+    {% endblock %}
+    <div class="navview-content h-100">
+        {% block appbar %}
+            <div data-role="appbar" class="pos-absolute bg-darkRed fg-white">
+
+                <a href="#" class="app-bar-item d-block d-none-lg"
+                   id="paneToggle"><span class="mif-menu"></span></a>
+
+                <div class="app-bar-container ml-auto">
+                    <a href="#" class="app-bar-item">
+                        <span class="mif-envelop"></span>
+                        <span class="badge bg-green fg-white mt-2 mr-1">4</span>
+                    </a>
+                    <a href="#" class="app-bar-item">
+                        <span class="mif-bell"></span>
+                        <span class="badge bg-orange fg-white mt-2 mr-1">10</span>
+                    </a>
+                    <a href="#" class="app-bar-item">
+                        <span class="mif-flag"></span>
+                        <span class="badge bg-red fg-white mt-2 mr-1">9</span>
+                    </a>
+                    <div class="app-bar-container">
+                        <a href="#" class="app-bar-item">
+                            <img src="images/jek_vorobey.jpg" class="avatar">
+                            <span class="ml-2 app-bar-name">{{ user_first_name }} {{ user_last_name }}</span>
+                        </a>
+                        <div class="user-block shadow-1" data-role="collapse"
+                             data-collapsed="true">
+                            <div class="bg-darkRed fg-white p-2 text-center">
+                                <img src="images/jek_vorobey.jpg"
+                                     class="avatar">
+                                <div class="h4 mb-0">{{ user_first_name }} {{ user_last_name }}</div>
+                                <div>({{ username }})</div>
+                            </div>
+                            <div class="bg-white d-flex flex-justify-between flex-equal-items p-2">
+                                <button class="button flat-button">Followers
+                                </button>
+                                <button class="button flat-button">Sales
+                                </button>
+                                <button class="button flat-button">Friends
+                                </button>
+                            </div>
+                            <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
+                                <button class="button mr-1">Profile</button>
+                                <button class="button ml-1">Sign out</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="app-bar-item">
+                        <span class="mif-cogs"></span>
+                    </a>
+                </div>
+            </div>
+        {% endblock %}
+        <div id="content-wrapper" class="content-inner h-100"
+             style="overflow-y: auto">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
+</body>
+</html>

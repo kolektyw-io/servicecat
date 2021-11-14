@@ -156,6 +156,9 @@
             </li>
 
 
+
+
+
             <li class="item-header">Documentation</li>
             <li>
                 <a href="">
@@ -169,8 +172,7 @@
         <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse"
              style="position: absolute; bottom: 0">
             <div>&copy; 2021 <a href="https://departamenttelekomunikacji.com"
-                                class="text-muted fg-white-hover no-decor">Michal
-                Hodur</a></div>
+                                class="text-muted fg-white-hover no-decor">Michal Hodur</a></div>
             <div>Created with <a href="https://metroui.org.ua"
                                  class="text-muted fg-white-hover no-decor">Metro
                 4</a></div>
@@ -224,11 +226,10 @@
                     </div>
                 </div>
             </div>
-            {% if user.is_superuser %}
-                <a href="{% url 'administration_home_view' %}"
-                   class="app-bar-item">
-                    <span class="mif-cogs"></span>
-                </a>
+           {% if user.is_superuser %}
+            <a href="#" class="app-bar-item">
+                <span class="mif-cogs"></span>
+            </a>
             {% endif %}
         </div>
     </div>
