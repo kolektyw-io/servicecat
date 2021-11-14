@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=" scrollbar-type-1 sb-cyan">
+<html lang="en" class=" scrollbar-type-1 sb-red">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -51,7 +51,7 @@
         }
 
         .navview .navview-menu .item-header {
-            color: #4b646f;
+            color: #6f4b4b;
             background: #1a2226;
             font-size: 12px;
         }
@@ -104,11 +104,11 @@
         }
 
         .navview-pane ::-webkit-scrollbar-track {
-            background-color: #4b646f !important;
+            background-color: #6f4b4b !important;
         }
 
         .navview-pane * {
-            scrollbar-color: #1ba1e2 #4b646f !important;
+            scrollbar-color: #e21b1b #6f4b4b !important;
         }
 
         .app-bar-name {
@@ -621,13 +621,13 @@
      data-compact="lg" data-active-state="true">
     {% block navview %}
         <div class="navview-pane">
-            <div class="bg-cyan d-flex flex-align-center">
-                <button class="pull-button m-0 bg-darkCyan-hover">
+            <div class="bg-red d-flex flex-align-center">
+                <button class="pull-button m-0 bg-darkRed-hover">
                     <span class="mif-menu fg-white"></span>
                 </button>
                 <h2 class="text-light m-0 fg-white pl-7"
                     style="line-height: 52px">
-                    ServiceCat 2021</h2>
+                    ServiceCat</h2>
             </div>
 
             <div class="suggest-box">
@@ -942,7 +942,7 @@
                                 class="mif-envelop"></span></span>
                         <span class="caption">Mailbox</span>
                         <span class="badges ml-auto mr-3">
-                        <span class="badge inline bg-cyan fg-white">17</span>
+                        <span class="badge inline bg-red fg-white">17</span>
                         <span class="badge inline bg-red fg-white">7</span>
                         <span class="badge inline bg-green fg-white">4</span>
                         <span class="badge inline bg-orange fg-white">3</span>
@@ -1038,7 +1038,7 @@
     {% endblock %}
     <div class="navview-content h-100">
         {% block appbar %}
-            <div data-role="appbar" class="pos-absolute bg-darkCyan fg-white">
+            <div data-role="appbar" class="pos-absolute bg-darkRed fg-white">
 
                 <a href="#" class="app-bar-item d-block d-none-lg"
                    id="paneToggle"><span class="mif-menu"></span></a>
@@ -1063,7 +1063,7 @@
                         </a>
                         <div class="user-block shadow-1" data-role="collapse"
                              data-collapsed="true">
-                            <div class="bg-darkCyan fg-white p-2 text-center">
+                            <div class="bg-darkRed fg-white p-2 text-center">
                                 <img src="images/jek_vorobey.jpg"
                                      class="avatar">
                                 <div class="h4 mb-0">{{ user_first_name }} {{ user_last_name }}</div>
@@ -1083,8 +1083,8 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="app-bar-item">
-                        <span class="mif-cogs"></span>
+                    <a href="{% url 'agent_home_view' %}" class="app-bar-item">
+                        <span class="mif-exit"></span>
                     </a>
                 </div>
             </div>
