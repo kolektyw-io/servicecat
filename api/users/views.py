@@ -19,8 +19,8 @@ def login_view(request):
         username = request.POST['email']
         password = request.POST['password']
         try:
-            u = User.objects.get(email=username)
-        except User.objects.DoesNotExist:
+            u = User.objects.get(username=username)
+        except User.DoesNotExist:
             return render(request, 'login/login_form_invalid.html')
         user = authenticate(request, username=u.username, password=password)
         if user is not None:

@@ -18,10 +18,10 @@ class AgentView(CommonView):
 
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
-        if not self.request.user.is_staff:
-            return redirect("error_user_not_an_agent")
 
     def get(self, request, *args, **kwargs):
+        if not self.request.user.is_staff:
+            return redirect("error_user_not_an_agent")
         return render(self.request, self.template_name, self.context)
 
 
@@ -30,6 +30,8 @@ class AuthenticatedUserView(CommonView):
 
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
         if self.request.user is None:
             return redirect("login_view")
 
@@ -39,8 +41,9 @@ class AdministratorView(CommonView):
 
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
-        if not self.request.user.is_superuser:
-            return redirect("error_user_not_an_administrator")
 
     def get(self, request, *args, **kwargs):
+
+        if not self.request.user.is_superuser:
+            return redirect("error_user_not_an_administrator")
         return render(self.request, self.template_name, self.context)

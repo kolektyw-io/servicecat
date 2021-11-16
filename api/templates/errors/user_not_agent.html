@@ -1,4 +1,3 @@
-{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Metro 4 -->
-    <link href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css"
+   <link href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css"
           rel="stylesheet">
+
     <style>
         body {
             background-color: #ECF0F5;
@@ -49,7 +49,7 @@
         }
 
         .navview .navview-menu .item-header {
-            color: #4b646f;
+            color: #6f4b4b;
             background: #1a2226;
             font-size: 12px;
         }
@@ -102,11 +102,11 @@
         }
 
         .navview-pane ::-webkit-scrollbar-track {
-            background-color: #4b646f !important;
+            background-color: #6f4b4b !important;
         }
 
         .navview-pane * {
-            scrollbar-color: #1ba1e2 #4b646f !important;
+            scrollbar-color: #e21b1b #6f4b4b !important;
         }
 
         .app-bar-name {
@@ -613,185 +613,39 @@
         /*# sourceMappingURL=index.css.map */
     </style>
 
-    <title>ServiceCat :: Help center</title>
+    <title>ServiceCat :: 401 Unauthorized</title>
 
-    <style>
-        .bg-hero {
-            background-color: #4b646f;
-        }
-
-        .bg-footer {
-            background-color: #222D32;
-        }
-    </style>
-</head>
-<body class="m4-cloak" style="padding-top: 52px">
-{% block header %}
-    <header data-role="appbar" data-expand-point="md">
-        <a href="index.html" class="d-block brand no-hover"><span class="text-bold">ServiceCat</span>&nbsp;|&nbsp;<span>Help Center</span></a>
-        <ul class="app-bar-menu ml-auto text-upper">
-            <li><a href="#"><span class="mif-help"></span>{% trans "Help Articles" %}</a></li>
-           {% if user.is_staff %} <li><a href="{% url "agent_home_view" %}"><span class="mif-users"></span>{% trans "Agent Panel" %} </a></li> {% endif %}
-           {% if user.is_anonymous %} <li><a href="{% url 'login_view' %}"><span class="text-bold">{% trans "Log In" %}</span></a></li> {% else %}
-               <li><span class="text">User:</span> <span class="text-bold">{{ user.first_name }} {{ user.last_name }}</span> </li>{% endif %}
-        </ul>
-    </header>
-
-    <div class="container-fluid bg-hero">
-        <div class="container">
-            <div class="hero d-flex flex-justify-center">
-                <div style="max-width: 400px;" class="text-center">
-                    <h2 class="mt-0 fg-white text-light">{% trans "How can we help?" %}</h2>
-                    <input type="text" data-role="input" data-search-button="true" data-prepend="Search">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bg-white">
-        <div class="container pt-10 pb-10">
-            <h5 class="text-center">Help Topics</h5>
-            <div class="row">
-                <div class="cell-md-6 cell-lg-3 mt-4">
-                    <a href="#" class="no-decor fg-dark text-center h-100">
-                        <div class="h-100 border bd-default p-4">
-                            <div><span class="mif-map2 mif-10x fg-grayMouse"></span></div>
-                            <div class="h4">Account Setup</div>
-                            <div class="">Get started on courses</div>
-                            <hr class="thin bg-gray">
-                            <div class="text-small">
-                                The clear admiral proudly promises the particle. As i have forgotten you, so you must
-                                receive one another.
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="cell-md-6 cell-lg-3 mt-4">
-                    <a href="#" class="no-decor fg-dark text-center h-100">
-                        <div class="h-100 border bd-default p-4">
-                            <div><span class="mif-cart mif-10x fg-grayMouse"></span></div>
-                            <div class="h4">Payments</div>
-                            <div class="">Pay for a course certificate</div>
-                            <hr class="thin bg-gray">
-                            <div class="text-small">
-                                The clear admiral proudly promises the particle. As i have forgotten you, so you must
-                                receive one another.
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="cell-md-6 cell-lg-3 mt-4">
-                    <a href="#" class="no-decor fg-dark text-center h-100">
-                        <div class="h-100 border bd-default p-4">
-                            <div><span class="mif-book-reference mif-10x fg-grayMouse"></span></div>
-                            <div class="h4">Enrollment</div>
-                            <div class="">Take a special courses</div>
-                            <hr class="thin bg-gray">
-                            <div class="text-small">
-                                The clear admiral proudly promises the particle. As i have forgotten you, so you must
-                                receive one another.
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="cell-md-6 cell-lg-3 mt-4">
-                    <a href="#" class="no-decor fg-dark text-center h-100">
-                        <div class="h-100 border bd-default p-4">
-                            <div><span class="mif-stethoscope mif-10x fg-grayMouse"></span></div>
-                            <div class="h4">Troubleshooting</div>
-                            <div class="">Solve common problems</div>
-                            <hr class="thin bg-gray">
-                            <div class="text-small">
-                                The clear admiral proudly promises the particle. As i have forgotten you, so you must
-                                receive one another.
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="text-center">
-                <button class="button primary" id="mytestbutton">All Topics</button>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-{% block recommended_articles %}
-    <div class="container-fluid">
-        <div class="container">
-            <h5 class="text-center mt-20">Recommended Articles</h5>
-            <div class="row mt-10 mb-20">
-                <div class="cell-md-4">
-                    <ul class="unstyled-list text-center">
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                    </ul>
-                </div>
-                <div class="cell-md-4">
-                    <ul class="unstyled-list text-center">
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                    </ul>
-                </div>
-                <div class="cell-md-4">
-                    <ul class="unstyled-list text-center">
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                        <li><a href="#" class="fg-dark">Armariums potus in clemens burdigala!</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-{% block footer %}
-    <footer class="container-fluid bg-footer fg-white p-4">
-        <div class="container text-center">
-            <ul class="inline-list reduce-1 m-0">
-                <li><a href="#" class="no-decor fg-gray fg-white-hover">Home</a></li>
-                <li><a href="#" class="no-decor fg-gray fg-white-hover">Privacy</a></li>
-                <li><a href="#" class="no-decor fg-gray fg-white-hover">Terms and Conditions</a></li>
-                <li><a href="#" class="no-decor fg-gray fg-white-hover">Documentation</a></li>
-            </ul>
-        </div>
-    </footer>
-{% endblock %}
-<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-{% block extrascripts %}<script>
-    function cb(response) {
-        console.log(response)
-        obj = JSON.parse(response)
-        console.log(obj.status)
-    }
-
-    button = document.getElementById("mytestbutton");
-    button.onclick = function () {
-        httpGetAsync("/rest/loginrequired", cb)
-        console.log("Fired")
-        return false;
-    }
-
-    function httpGetAsync(theUrl, callback) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.onreadystatechange = function () {
-            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                callback(xmlHttp.responseText);
-            } else {
-                console.log(xmlHttp.status, xmlHttp.readyState)
+    <script>
+        var customButtons = [
+            {
+                html: "<span class='mif-search mif-2x'>",
+                onclick: function(){
+                    $(this.form).submit()
+                }
             }
+        ];
+    </script>
 
-        }
-        xmlHttp.open("GET", theUrl, true); // true for asynchronous
-        xmlHttp.send(null);
-    }
-</script>
-{% endblock %}
+</head>
+<body class="m4-cloak h-vh-100 d-flex flex-justify-center flex-align-center">
+<div class="grid">
+<div class="row">
+    <div class="container text-center">
+
+        <div class="display4 fg-orange mt-0">401</div>
+        <div class="h1 text-center m-8">Oops!<br>You do not have enough permissions to acccess this part.</div>
+
+        <div class="text-leader2 text-center page-error-box mx-auto">
+You are not authorized to see this content.            <br>Meanwhile, you may <a href="/">return to dashboard</a>.
+        </div>
+
+    </div></div>
+<div class="row">
+<div class="container text-center">
+    ServiceCat 0.0.1
+</div> </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 </body>
 </html>
