@@ -13,7 +13,6 @@ class CommonView(TemplateView):
         self.context['user'] = self.request.user
 
 
-
 class AgentView(CommonView):
     template_name = ""
 
@@ -26,7 +25,7 @@ class AgentView(CommonView):
         return render(self.request, self.template_name, self.context)
 
 
-class ClientView(CommonView):
+class AuthenticatedUserView(CommonView):
     template_name = ""
 
     def setup(self, request, *args, **kwargs):
@@ -45,4 +44,3 @@ class AdministratorView(CommonView):
 
     def get(self, request, *args, **kwargs):
         return render(self.request, self.template_name, self.context)
-
